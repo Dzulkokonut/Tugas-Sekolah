@@ -1,4 +1,4 @@
-# CASP - Galeri Kenangan Sekolah
+# CASP - Catatan Anak Sekolah Pusdikhubad
 
 aplikasi ini buat nyimpen Kenang kenangan foto Atau Catatan Antar Jutusan. dibuat pake PHP, MySQL, sama javascript biasa (yang java script make ai). ada fitur login, upload foto, sama hapus postingan.
 
@@ -39,7 +39,7 @@ di halaman login ada dua cara masuk, bisa login biasa pake username sama passwor
 buat login tamu ga perlu cek database sama sekali, langsung dikasih session dengan ID 0 dan jurusan GUEST.
 
 ### dashboard.php
-ini file paling penting. pas dibuka, yang pertama dicek adalah sessionnya, kalo belum login langsung ditolak.
+ini file paling penting. Jadi pas dibuka, yang pertama dicek adalah sessionnya, kalo belum login langsung ditolak.
 
 buat upload foto, sistemnya bakal:
 1. nyaring judul sama keterangan dari kata-kata kasar pake blacklist
@@ -67,7 +67,7 @@ ada dua tabel utama:
 pengguna nyimpen data akun (username, password, nama, jurusan)
 galeri  nyimpen data postingan (judul, keterangan, nama file foto, jurusan, waktu upload)
 
-sebelum jalanin aplikasinya, import dulu file db_casp.sql ke phpMyAdmin.
+Jadi sebelum jalanin aplikasinya, import dulu file db_casp.sql ke phpMyAdmin.
 
 
 ## Bahasa Penrograman yang dioakai
