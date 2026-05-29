@@ -1,0 +1,572 @@
+/* ===== RESET ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== VARIABEL TEMA ===== */
+:root {
+    --h: #0e0e0f;
+    --c: #1a1a1c;
+    --g: #242428;
+    --b: #2e2e33;
+    --w: #f4f4f0;
+    --m: #7a7a85;
+    --a: #c8f23a;
+}
+
+/* Light mode */
+.lm {
+    --h: #f0efe9;
+    --c: #e4e3db;
+    --g: #d8d7ce;
+    --b: #c5c4bc;
+    --w: #111110;
+    --m: #666660;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: var(--h);
+    color: var(--w);
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: var(--h);
+    border-bottom: 1px solid var(--b);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 56px;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -.5px;
+    color: var(--w);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    background: var(--a);
+    color: #0e0e0f;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hr {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.uc {
+    font-size: 13px;
+    color: var(--m);
+    font-weight: 500;
+}
+
+.uc b {
+    color: var(--w);
+}
+
+.btt {
+    background: none;
+    border: 1px solid var(--b);
+    color: var(--w);
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color .2s, background .2s;
+}
+
+.btt:hover {
+    background: var(--g);
+    border-color: var(--a);
+}
+
+.blo {
+    background: none;
+    border: 1px solid #ff4d4d55;
+    color: #ff6b6b;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .2s;
+}
+
+.blo:hover {
+    background: #ff4d4d22;
+}
+
+/* ===== LAYOUT UTAMA ===== */
+.wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+}
+
+/* ===== TAB JURUSAN ===== */
+.tabs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--b);
+    margin-bottom: 28px;
+    scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tab {
+    flex-shrink: 0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--b);
+    color: var(--m);
+    background: var(--c);
+    transition: all .18s;
+    letter-spacing: .3px;
+}
+
+.tab:hover {
+    color: var(--w);
+    border-color: var(--m);
+}
+
+.tab.on {
+    background: var(--a);
+    border-color: var(--a);
+    color: #0e0e0f;
+}
+
+/* ===== FORM UPLOAD ===== */
+.upbox {
+    background: var(--c);
+    border: 1px solid var(--b);
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 32px;
+}
+
+.upbox h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--w);
+    margin-bottom: 18px;
+}
+
+.upbox h2 em {
+    font-style: normal;
+    color: var(--a);
+}
+
+.lbl {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--m);
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.inp {
+    width: 100%;
+    background: var(--h);
+    border: 1px solid var(--b);
+    color: var(--w);
+    padding: 10px 13px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin-bottom: 14px;
+    outline: none;
+    transition: border-color .2s;
+}
+
+.inp:focus {
+    border-color: var(--a);
+}
+
+textarea.inp {
+    height: 78px;
+    resize: none;
+}
+
+.bup {
+    width: 100%;
+    padding: 12px;
+    background: var(--a);
+    color: #0e0e0f;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+.bup:hover {
+    opacity: .85;
+}
+
+/* ===== BANNER LIHAT DOANG ===== */
+.vob {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--c);
+    border: 1px solid var(--b);
+    border-left: 3px solid var(--a);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--m);
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.vob b {
+    color: var(--w);
+}
+
+/* ===== SECTION HEADING ===== */
+.sh {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.sh h3 {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -.3px;
+}
+
+.sh .ct {
+    font-size: 12px;
+    color: var(--m);
+    background: var(--g);
+    padding: 3px 10px;
+    border-radius: 99px;
+}
+
+/* ===== GRID KARTU ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background: var(--c);
+    border: 1px solid var(--b);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .2s, border-color .2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #444448;
+}
+
+.ci {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+    transition: opacity .2s;
+}
+
+.ci:hover {
+    opacity: .9;
+}
+
+.ni {
+    height: 190px;
+    background: var(--g);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--m);
+    font-size: 13px;
+}
+
+.cb {
+    padding: 14px 16px 16px;
+}
+
+.ct2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--w);
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.cd {
+    font-size: 13px;
+    color: var(--m);
+    line-height: 1.55;
+    margin-bottom: 12px;
+}
+
+.cm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--m);
+}
+
+.cm .by b {
+    color: var(--w);
+}
+
+.bhp {
+    background: none;
+    border: 1px solid #ff4d4d55;
+    color: #ff6b6b;
+    padding: 4px 11px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .18s;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin-top: 12px;
+    display: inline-block;
+}
+
+.bhp:hover {
+    background: #ff4d4d22;
+}
+
+.emp {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--m);
+    font-size: 14px;
+}
+
+.emp span {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* ===== LIGHTBOX ===== */
+#lb {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .93);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#lb.on {
+    display: flex;
+}
+
+#lbi {
+    max-width: 92vw;
+    max-height: 84vh;
+    object-fit: contain;
+    border-radius: 8px;
+    animation: zi .22s ease;
+}
+
+@keyframes zi {
+    from { transform: scale(.88); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+#lbc {
+    color: rgba(255, 255, 255, .6);
+    font-size: 13px;
+    margin-top: 12px;
+    max-width: 80vw;
+    text-align: center;
+}
+
+#lbx {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    color: rgba(255, 255, 255, .6);
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color .15s;
+    user-select: none;
+}
+
+#lbx:hover {
+    color: #fff;
+}
+/* ===== FITUR TAMBAHAN (Search & Retro) ===== */
+.toolbars {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.inp-cari {
+    flex: 1;
+    background: var(--c);
+    border: 1px solid var(--b);
+    color: var(--w);
+    padding: 12px 16px;
+    border-radius: 99px;
+    font-size: 14px;
+    outline: none;
+    transition: all .2s;
+}
+
+.inp-cari:focus {
+    border-color: var(--a);
+    box-shadow: 0 0 0 2px rgba(200, 242, 58, 0.1);
+}
+
+
+
+/* ===== EKSPERIMENTAL: Animasi Hover Kartu ===== */
+.card {
+    transition: all 0.3s ease; /* Bikin pergerakan mulus */
+    overflow: hidden; /* Biar foto yang nge-zoom ga keluar batas kartu */
+}
+
+.card:hover {
+    transform: translateY(-6px); /* Kartu naik dikit ke atas */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Nambahin bayangan */
+    border-color: var(--a); /* Garis pinggir berubah jadi ijo neon */
+}
+
+.ci {
+    transition: transform 0.4s ease;
+}
+
+.card:hover .ci {
+    transform: scale(1.05); /* Fotonya agak nge-zoom ke dalam */
+}
+
+/* ===== EKSPERIMENTAL: Custom Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px; /* Bikin scrollbar lebih langsing */
+}
+::-webkit-scrollbar-track {
+    background: var(--h); /* Warna track nyaru sama background web */
+}
+::-webkit-scrollbar-thumb {
+    background: var(--b);
+    border-radius: 10px; /* Ujungnya dibikin tumpul/bulat */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--a); /* Pas disorot mouse berubah jadi ijo neon/warna aksen lu */
+}
+
+/* ===== EKSPERIMENTAL: FITUR SORTIR ===== */
+.inp-urut {
+    background: var(--c);
+    border: 1px solid var(--b);
+    color: var(--w);
+    padding: 10px 14px;
+    border-radius: 99px;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    appearance: none; /* Ngilangin panah default browser yang jelek */
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a7a85' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px;
+    padding-right: 32px; /* Ngasih jarak buat icon panah baru */
+}
+
+.inp-urut:focus {
+    border-color: var(--a);
+}
+
+/* Biar ga ancur pas masuk Mode Hacker */
+body.termux-mode .inp-urut {
+    background-color: #000 !important;
+    color: #00ff00 !important;
+    border-color: #00ff00 !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300ff00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+}
+
+/* ===== FIX LOGO HEADER (WARNA & BACKGROUND BALIK LAGI) ===== */
+.logo {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    
+    /* Pake inline-flex biar gambar ama teks sejajar tapi ga ngerusak text node */
+    display: inline-flex;
+    align-items: center; 
+}
+
+/* Ngatur gambar logo biar pas */
+.logo img {
+    height: 38px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+/* Tulisan PUSDIKHUBAD yang ada warnanya kita balikin di sini */
+.logo span {
+    font-weight: 800;
+    color: #000000;             /* Warna teks item biar kontras */
+    background: var(--a);       /* Nyedot warna ijo neon/aksen dari tema lu */
+    padding: 3px 8px;           /* Ngasih jarak background biar mlenis */
+    border-radius: 4px;         /* Sudut kotak dibikin tumpul dikit */
+    margin-left: 6px;           /* Jarak dari kata CAS */
+    display: inline-block;
+}
+
+/* Biar pas Mode Terminal/Hacker warnanya tetep ijo neon khas terminal */
+body.termux-mode .logo span {
+    background: #00ff00 !important;
+    color: #000000 !important;
+}
